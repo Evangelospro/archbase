@@ -21,3 +21,5 @@ USER user
 RUN paru -Syu --noconfirm rate-mirrors-bin gcc
 RUN rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist
 
+# Continue with root user
+USER root
