@@ -18,6 +18,6 @@ RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER user
 
 # Get the best mirrors
-RUN paru -Syu --noconfirm rate-mirrors-bin git sudo make gcc base-devel
+RUN paru -Syu --noconfirm rate-mirrors-bin gcc
 RUN rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist
 
