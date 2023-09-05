@@ -17,6 +17,9 @@ RUN echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER user
 
+# get rust ready for any rust software builds
+RUN rustup default stable
+
 # Get the best mirrors
 RUN paru -Syu --noconfirm rate-mirrors-bin gcc python-setuptools
 RUN rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist
